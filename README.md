@@ -26,28 +26,19 @@ settings interface.
 Building
 --------
 
-First, clone/download all of the source from GitHub.
+First, clone/download all of the source from GitHub. Then run `makelinks.sh`. Note that this will make hardlinks.
 
-In Windows, run `makelinks.bat` to create symlinks to extension.js - these links are not
-handled by GitHub, which is why you unfortunately have to make them yourself.
-**NOTE:** You may need to open a command prompt as Administrator for this batch file to
-work.
+### Safari Notes ###
 
-In UNIX-based OSes, you can run `makelinks.sh`. Note that this will make hardlinks.
-
-**IMPORTANT OPERA NOTE:** Note that the Opera js file has .user.js in it - that's because without this,
-@include and @exclude directives will be ignored and your script will run on every page on
-the internet!
-
-**IMPORTANT SAFARI NOTE:** Safari has a "security feature" that is not documented, gives no user
-feedback at all, and can be a HUGE time sink if you don't know about it!  If you have any
+Safari has a "security feature" that is not documented, gives no user
+feedback at all, and can be a **huge** time sink if you don't know about it!  If you have any
 files in your extension directory that are symlinks, Safari will **silently** ignore them.
 With Safari, a hard link will work, but a symbolic link will not.  If you made the links
 yourself instead of using the batch file, and your extension is doing nothing at all in
 Safari, double check that!
 
-One last Safari quirk: if the directory does not end in ".safariextension", it will not be
-recognized by Safari. Don't remove that from the name!
+If the directory does not end in ".safariextension", it will not be recognized by Safari.
+Don't remove that from the name!
 
 Loading/testing the Extension in Browsers
 -----------------------------------------
