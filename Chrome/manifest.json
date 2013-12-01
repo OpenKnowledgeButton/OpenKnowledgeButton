@@ -23,5 +23,6 @@
 		"tabs",
 		"history",
 		"notifications"
-	]
+	],
+	"web_accessible_resources": ["modules/annotateit.js"]
 }

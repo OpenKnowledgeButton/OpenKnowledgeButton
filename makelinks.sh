@@ -6,7 +6,11 @@ set -eu
 
 cd "$(dirname "$0")"
 
-files=("BabelExt.js" "extension.js")
+files=(
+  "BabelExt.js"
+  "extension.js"
+  "modules/annotateit.js"
+)
 paths=("Chrome" "XPI/data" "Opera" "Safari.safariextension")
 
 for scriptpath in "${files[@]}"
