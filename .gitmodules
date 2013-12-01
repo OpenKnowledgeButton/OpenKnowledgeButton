@@ -1,0 +1,4 @@
+[submodule "lib/vendor/fancy-settings"]
+	path = lib/vendor/fancy-settings
+	url = git://github.com/OpenKnowledgeButton/fancy-settings.git
+	branch = master
