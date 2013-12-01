@@ -7,9 +7,13 @@ How about adding your project as well? [Here how!]() TODO - add guidelines how t
 Rationale
 ---------
 
-We want to help an open eco-system to grow our communities and make life easier for our users: Instead of having multiple , possible conflicting addons, we provide one customisable extension with a combined set of features.
+We want to create an open eco-system to grow our communities and make life easier for the people using annotation browser extensions: Instead of having multiple, possible conflicting addons, we provide one customisable extension with a combined set of features.
 
-Our would like to motivate others to adopt the open annotation standards and enjoy a powerful extension that provides a complete solution for annotations.
+Each application has the autonomy to freely and dynamically add or modify the features supported by the Open Knowledge Button. It functions as a public domain gateway for the functionality of each apps.
+
+People should have a good experience using the tool. To balance the benefit of the diverse functionalities vs downside of being overwhelmed by them, end-users can turn on/off functionalities that are not useful for them. As extension developers from different project, we should try our best to see how we can work in harmony, but ultimately it will be up to the end-user to decide what functionality he wants. On installation we provide a concise and user-friendly explanation of the customization functions.
+
+We hope this initiative would motivate others to adopt the open annotation standards and enjoy a powerful extension that provides a complete solution for annotations.
 
 Credits
 -------
