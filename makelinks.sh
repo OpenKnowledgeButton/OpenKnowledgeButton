@@ -26,7 +26,7 @@ makelink() {
       pathdirname="${path%/*}/"
     fi
 
-    if [ "extension" == "Opera" ]; then
+    if [ "$extension" == "Opera" ]; then
       if [[ "$pathbasename" == *.user.js || "$pathbasename" == *.css ]]; then
         dest="./${extension}/includes/${pathdirname}"
       else
