@@ -6,45 +6,58 @@ set -eu
 
 cd "$(dirname "$0")"
 
-files=(
+paths=(
   "BabelExt.js"
   "extension.js"
-  "modules/annotateit.js"
+  "modules"
+  "vendor/fancy-settings/source"
 )
-paths=("Chrome" "XPI/data" "Opera" "Safari.safariextension")
+extensions=("Chrome" "Firefox/data" "Opera" "Safari.safariextension")
 
-for scriptpath in "${files[@]}"
-do
-  for ext in "${paths[@]}"
-  do
+makelink() {
+  local path="$1"
 
-    scriptbasename="${scriptpath##*/}"
-    scriptdirname=""
+  for extension in "${extensions[@]}"; do
 
-    if [ "$scriptbasename" != "$scriptpath" ]; then
-      scriptdirname="${scriptpath%/*}/"
+    pathbasename="${path##*/}"
+    pathdirname=""
+
+    if [ "$pathbasename" != "$path" ]; then
+      pathdirname="${path%/*}/"
     fi
 
-    if [ "$ext" == "Opera" ];
-    then
-      if [[ "$scriptbasename" == *.user.js || "$scriptbasename" == *.css ]];
-      then
-        dest="./${ext}/includes/${scriptdirname}"
+    if [ "extension" == "Opera" ]; then
+      if [[ "$pathbasename" == *.user.js || "$pathbasename" == *.css ]]; then
+        dest="./${extension}/includes/${pathdirname}"
       else
-        dest="./${ext}/modules/${scriptdirname}"
+        dest="./${extension}/modules/${pathdirname}"
       fi
     else
-      dest="./${ext}/${scriptdirname}"
+      dest="./${extension}/${pathdirname}"
     fi
-    echo "Re-linking: ${dest}${scriptbasename}"
-    rm -f "${dest}${scriptbasename}"
+    echo "Re-linking: ${dest}${pathbasename}"
+    rm -f "${dest}${pathbasename}"
 
-    if [ "$command" != "clean" ];
-    then
+    if [ "$command" != "clean" ]; then
       mkdir -p "$dest"
-      ln "./lib/${scriptpath}" "$dest"
+      ln "./lib/${path}" "$dest"
     fi
   done
-done
+}
 
+traverse() {
+  local path="$1"
+
+  if [ -d "./lib/$path" ]; then
+    for subpath in ./lib/$path/*; do
+      traverse "${subpath/#.\/lib\//}"
+    done
+  else
+    makelink "$path"
+  fi
+}
+
+for path in "${paths[@]}"; do
+  traverse "$path"
+done
 

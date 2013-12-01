@@ -1,3 +1,10 @@
 .*
+Chrome/modules/
+Chrome/vendor/
 Opera/modules/
-XPI/
+Opera/vendor/
+Opera/BabelExt.js
+Opera/extension.js
+Firefox/data/modules/
+Firefox/data/vendor/
+Safari.safariextension/vendor/
