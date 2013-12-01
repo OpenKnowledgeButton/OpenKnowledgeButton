@@ -7,4 +7,5 @@ Opera/BabelExt.js
 Opera/extension.js
 Firefox/data/modules/
 Firefox/data/vendor/
+Safari.safariextension/modules/
 Safari.safariextension/vendor/
