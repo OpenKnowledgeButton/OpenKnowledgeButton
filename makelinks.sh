@@ -9,6 +9,9 @@ cd "$(dirname "$0")"
 paths=(
   "BabelExt.js"
   "extension.js"
+  "icon16.png"
+  "icon48.png"
+  "icon128.png"
   "modules"
   "vendor/fancy-settings/source"
 )
