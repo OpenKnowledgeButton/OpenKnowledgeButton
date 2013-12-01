@@ -7,15 +7,15 @@
 	<key>Builder Version</key>
 	<string>8536.30.1</string>
 	<key>CFBundleDisplayName</key>
-	<string>BabelExt Extension</string>
+	<string>Open Knowledge Button</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.honestbleeps.babelext-extension</string>
+	<string>openknowledgebutton</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.95</string>
+	<string>0.1.0</string>
 	<key>CFBundleVersion</key>
-	<string>0.95</string>
+	<string>0.1.0</string>
 	<key>Chrome</key>
 	<dict>
 		<key>Database Quota</key>
