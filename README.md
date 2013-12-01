@@ -20,7 +20,8 @@ Credits
 -------
 
 Build using great [BabelExt](https://github.com/honestbleeps/BabelExt) cross browser
-boilerplate/library for extension development.
+boilerplate/library for extension development, and [fancy-settings](https://github.com/altryne/fancy-settings) for
+settings interface.
 
 Building
 --------
