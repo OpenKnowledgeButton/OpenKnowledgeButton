@@ -1,32 +1,44 @@
 #!/bin/bash
+
+command=$1
+
+set -eu
+
+cd "$(dirname "$0")"
+
 files=("BabelExt.js" "extension.js")
 paths=("Chrome" "XPI/data" "Opera" "Safari.safariextension")
 
-for i in "${files[@]}"
+for scriptpath in "${files[@]}"
 do
-  for j in "${paths[@]}"
+  for ext in "${paths[@]}"
   do
-    if [ "$j" == "Opera" ];
-    then
-      if [[ "$i" == *.user.js || "$i" == *.css ]];
-      then
-        dest="./$j/includes/"
-      else
-        dest="./$j/modules/"
-      fi
-    else
-      dest="./$j/"
-    fi
-    echo "Re-linking:" $dest$i
-    if [ -f $dest$i ];
-    then
-      rm $dest$i
+
+    scriptbasename="${scriptpath##*/}"
+    scriptdirname=""
+
+    if [ "$scriptbasename" != "$scriptpath" ]; then
+      scriptdirname="${scriptpath%/*}/"
     fi
 
-    if [ "clean" != "$1" ];
+    if [ "$ext" == "Opera" ];
     then
-      mkdir -p $dest
-      ln ./lib/$i $dest
+      if [[ "$scriptbasename" == *.user.js || "$scriptbasename" == *.css ]];
+      then
+        dest="./${ext}/includes/${scriptdirname}"
+      else
+        dest="./${ext}/modules/${scriptdirname}"
+      fi
+    else
+      dest="./${ext}/${scriptdirname}"
+    fi
+    echo "Re-linking: ${dest}${scriptbasename}"
+    rm -f "${dest}${scriptbasename}"
+
+    if [ "$command" != "clean" ];
+    then
+      mkdir -p "$dest"
+      ln "./lib/${scriptpath}" "$dest"
     fi
   done
 done
