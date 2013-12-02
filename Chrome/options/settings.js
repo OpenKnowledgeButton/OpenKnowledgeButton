@@ -4,12 +4,16 @@
         $.each(options, function (module, opts) {
             var outputSettings = {};
 
-            settings.create({
+            var enabled = settings.create({
                 "tab": i18n.get(module),
                 "group": i18n.get("enabled"),
                 "name": module + "-enabled",
                 "type": "checkbox",
                 "label": i18n.get("Enable or disable") + " " + i18n.get(module)
+            });
+
+            $(enabled.element).on("change", function (e) {
+                BabelExt.storage.set(module + "-enabled", $(this).is(":checked"), function () {});
             });
 
             $.each(opts.settings, function (i, setting) {
