@@ -2,7 +2,7 @@
 	"name": "Open Knowledge Button",
 	"version": "0.1.0",
 	"manifest_version": 2,
-	"description": "View and contribute to the web's growing layer of open knowledge via AnnotateIt, Hypothes.is, PeerLibrary, and others.",
+	"description": "View and contribute to the web's growing layer of open knowledge via AnnotateIt, Hypothes.is, Knownodes, PeerLibrary, and others.",
 	"background": {
 		"scripts": ["background.js"]
 	},

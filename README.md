@@ -2,7 +2,7 @@ Open Knowledge Button
 =====================
 
 The Open Knowledge Button is a browser meta-extension that provide functionalities for multiple open knowledge projects.
-View and contribute to the web's growing layer of open knowledge via AnnotateIt, Hypothes.is, PeerLibrary, and others.
+View and contribute to the web's growing layer of open knowledge via AnnotateIt, Hypothes.is, Knownodes, PeerLibrary, and others.
 
 How about adding your project as well? [Here how!]() TODO - add guidelines how to join.
 
