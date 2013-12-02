@@ -7,13 +7,13 @@
             var enabled = settings.create({
                 "tab": i18n.get(module),
                 "group": i18n.get("enabled"),
-                "name": module + "-enabled",
+                "name": "general-" + module + "-enabled",
                 "type": "checkbox",
                 "label": i18n.get("Enable or disable") + " " + i18n.get(module)
             });
 
-            $(enabled.element).on("change", function (e) {
-                BabelExt.storage.set(module + "-enabled", $(this).is(":checked"), function () {});
+            enabled.addEvent("action", function () {
+                BabelExt.storage.set("general-" + module + "-enabled", enabled.get(), function () {});
             });
 
             $.each(opts.settings, function (i, setting) {
@@ -29,6 +29,21 @@
                 var output = settings.create(setting);
                 if (name) {
                     outputSettings[name] = output;
+
+                    if ($.inArray(setting.type, ["text", "textarea", "slider", "popupButton", "listBox", "radioButtons", "checkbox"]) !== -1) {
+                         output.addEvent("action", function () {
+                             var value = output.get().toString();
+                             BabelExt.storage.get(setting.name, function (storage) {
+                                 if (storage.value !== value) {
+                                     BabelExt.storage.set(setting.name, value, function (newStorage) {
+                                         if (opts.settingChanged) {
+                                             opts.settingChanged(name, newStorage.value, outputSettings);
+                                         }
+                                     });
+                                 }
+                             })
+                         });
+                    }
                 }
             });
 
@@ -43,18 +58,8 @@
                 $('body').removeClass("measuring");
             }
 
-            if (opts.callback) {
-                // We clean out MooTools things because we might not in the future use MooTools
-                $.each(outputSettings, function (settingName, setting) {
-                    var output = {};
-                    $.each(setting, function (fieldName, field) {
-                        if ($.inArray(fieldName, ["bundle", "bundleContainer", "container", "element", "label"]) !== -1) {
-                            output[fieldName] = field;
-                        }
-                    });
-                    outputSettings[settingName] = output;
-                });
-                opts.callback(outputSettings);
+            if (opts.afterInit) {
+                opts.afterInit(outputSettings);
             }
         });
     });
