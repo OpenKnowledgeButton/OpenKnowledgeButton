@@ -39,6 +39,14 @@
                     outputSettings[name] = output;
 
                     if ($.inArray(setting.type, ["text", "textarea", "slider", "popupButton", "listBox", "radioButtons", "checkbox"]) !== -1) {
+                        // Do this before we install any event handlers
+                        if (setting.masked) {
+                            // Make sure we do not have any masked value stored
+                            BabelExt.storage.remove(setting.name, function () {});
+                            // Clear the field as well
+                            output.set("");
+                        }
+
                         // "action" event is special event triggered by fancy-settings
                         // on change and related events. Adding additional event handler
                         // for change and related events does not work for some reason,
@@ -49,23 +57,33 @@
                         // call we sync local storage as well.
                         output.addEvent("action", function () {
                             var value = output.get().toString();
-                            BabelExt.storage.get(setting.name, function (storage) {
-                                // To prevent any strange loops, we check
-                                // if the value has been really changed
-                                if (storage.value !== value) {
-                                    BabelExt.storage.set(setting.name, value, function (newStorage) {
-                                        if (opts.settingChanged) {
-                                            opts.settingChanged(name, newStorage.value, outputSettings);
-                                        }
-                                    });
+                            if (setting.masked) {
+                                // For masked fields just call a callback, don't store them
+                                if (opts.settingChanged) {
+                                    opts.settingChanged(name, value, outputSettings);
                                 }
-                            })
+                            }
+                            else {
+                                BabelExt.storage.get(setting.name, function (storage) {
+                                    // To prevent any strange loops, we check
+                                    // if the value has been really changed
+                                    if (storage.value !== value) {
+                                        BabelExt.storage.set(setting.name, value, function (newStorage) {
+                                            if (opts.settingChanged) {
+                                                opts.settingChanged(name, newStorage.value, outputSettings);
+                                            }
+                                        });
+                                    }
+                                })
+                            }
                         });
 
-                        // Initializing the value from local storage.
-                        BabelExt.storage.get(setting.name, function (storage) {
-                            output.set(storage.value);
-                        });
+                        if (!setting.masked) {
+                            // Initializing the value from local storage
+                            BabelExt.storage.get(setting.name, function (storage) {
+                                output.set(storage.value);
+                            });
+                        }
                     }
                 }
             });
