@@ -14,6 +14,7 @@ paths=(
   "icon128.png"
   "modules"
   "vendor/fancy-settings/source"
+  "vendor/jquery"
 )
 extensions=("Chrome" "Firefox/data" "Opera" "Safari.safariextension")
 
