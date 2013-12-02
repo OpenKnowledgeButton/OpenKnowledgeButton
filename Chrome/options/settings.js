@@ -4,6 +4,14 @@
         $.each(options, function (module, opts) {
             var outputSettings = {};
 
+            settings.create({
+                "tab": i18n.get(module),
+                "group": i18n.get("enabled"),
+                "name": module + "-enabled",
+                "type": "checkbox",
+                "label": i18n.get("Enable or disable") + " " + i18n.get(module)
+            });
+
             $.each(opts.settings, function (i, setting) {
                 var name = setting.name;
                 setting = $.extend({}, setting, {

@@ -8,6 +8,9 @@ jQuery.extend(this.i18n, {
         "en": "Search",
         "de": "Suche"
     },
+    "enabled": {
+        "en": "Enabled"
+    },
     "nothing-found": {
         "en": "No matches were found.",
         "de": "Keine Übereinstimmungen gefunden."
