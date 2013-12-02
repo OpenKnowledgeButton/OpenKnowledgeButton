@@ -5,13 +5,18 @@
             var outputSettings = {};
 
             $.each(opts.settings, function (i, setting) {
+                var name = setting.name;
                 setting = $.extend({}, setting, {
                     "tab": i18n.get(module)
                 });
 
+                if (name) {
+                    setting.name = module + "-" + name;
+                }
+
                 var output = settings.create(setting);
-                if (setting.name) {
-                    outputSettings[setting.name] = output;
+                if (name) {
+                    outputSettings[name] = output;
                 }
             });
 
