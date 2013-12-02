@@ -1,7 +1,7 @@
 Open Knowledge Button
 =====================
 
-The Open Knowledge Button is a meta-addon browser extension that provide functionalities for open annotation projects.
+The Open Knowledge Button is a browser meta-extension that provide functionalities for multiple open knowledge projects.
 
 How about adding your project as well? [Here how!]() TODO - add guidelines how to join.
 
