@@ -16,6 +16,10 @@
                 BabelExt.storage.set("general-" + module + "-enabled", enabled.get(), function () {});
             });
 
+            BabelExt.storage.get("general-" + module + "-enabled", function (storage) {
+                enabled.set((storage.value || "true") === "true");
+            });
+
             $.each(opts.settings, function (i, setting) {
                 var name = setting.name;
                 setting = $.extend({}, setting, {
@@ -31,18 +35,22 @@
                     outputSettings[name] = output;
 
                     if ($.inArray(setting.type, ["text", "textarea", "slider", "popupButton", "listBox", "radioButtons", "checkbox"]) !== -1) {
-                         output.addEvent("action", function () {
-                             var value = output.get().toString();
-                             BabelExt.storage.get(setting.name, function (storage) {
-                                 if (storage.value !== value) {
-                                     BabelExt.storage.set(setting.name, value, function (newStorage) {
-                                         if (opts.settingChanged) {
-                                             opts.settingChanged(name, newStorage.value, outputSettings);
-                                         }
-                                     });
-                                 }
-                             })
-                         });
+                        output.addEvent("action", function () {
+                            var value = output.get().toString();
+                            BabelExt.storage.get(setting.name, function (storage) {
+                                if (storage.value !== value) {
+                                    BabelExt.storage.set(setting.name, value, function (newStorage) {
+                                        if (opts.settingChanged) {
+                                            opts.settingChanged(name, newStorage.value, outputSettings);
+                                        }
+                                    });
+                                }
+                            })
+                        });
+
+                        BabelExt.storage.get(setting.name, function (storage) {
+                            output.set(storage.value);
+                        });
                     }
                 }
             });
