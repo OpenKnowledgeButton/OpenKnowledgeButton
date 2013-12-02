@@ -9,7 +9,8 @@
 	"content_scripts": [
 		{
 			"matches": [ "*://*/*" ],
-			"js": ["BabelExt.js", "extension.js"]
+			"js": ["BabelExt.js", "modules/annotateit/jquery-1.10.2.min.js", "modules/annotateit/annotator-full.min.js", "modules/annotateit/annotateit.js", "extension.js"],
+			"css": ["modules/annotateit/annotator.min.css"]
 		}
 	],
     "options_page": "options/options.html",
@@ -23,6 +24,5 @@
 		"tabs",
 		"history",
 		"notifications"
-	],
-	"web_accessible_resources": ["modules/annotateit.js"]
+	]
 }

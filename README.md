@@ -27,7 +27,7 @@ settings interface.
 Building
 --------
 
-First, clone/download all of the source from GitHub. Then run `makelinks.sh`. Note that this will make hardlinks.
+First, clone/download all of the source from GitHub. To update fancy-settings, run `git submodule update --init`. Then run `makelinks.sh`. Note that this will make hardlinks.
 
 ### Safari Notes ###
 
