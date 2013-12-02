@@ -8,13 +8,13 @@ How about adding your project as well? [Here how!]() TODO - add guidelines how t
 Rationale
 ---------
 
-We want to create an open eco-system to grow our communities and make life easier for the people using annotation browser extensions: Instead of having multiple, possible conflicting addons, we provide one customisable extension with a combined set of features.
+We want to create an open eco-system to grow our communities and make life easier for the people using open knowledge browser extensions: Instead of having multiple, possible conflicting extensions, we provide one customisable extension with a combined set of features.
 
 Each application has the autonomy to freely and dynamically add or modify the features supported by the Open Knowledge Button. It functions as a public domain gateway for the functionality of each app.
 
-People should have a good experience using the tool. To balance the benefit of the diverse functionalities vs cost of being overwhelmed by them, end-users can turn on/off functionalities that are not useful for them. As extension developers from different project, we should try our best to see how we can work in harmony, but ultimately it will be up to the end-user to decide what functionalities he wants. On installation we provide a concise and user-friendly explanation of the customization functions.
+People should have a good experience using the tool. To balance the benefit of the diverse functionalities vs. cost of being overwhelmed by them, end-users can turn on/off functionalities that are not useful for them. As extension developers from different project, we should try our best to see how we can work in harmony, but ultimately it will be up to the end-user to decide what functionalities he or she wants. On installation we provide a concise and user-friendly explanation of the customization functions.
 
-We hope this initiative would motivate others to adopt the open annotation standards and enjoy a powerful extension that provides a complete solution for annotating knowledge in the open.
+We hope this initiative would motivate others to adopt the open knowledge standards and enjoy a powerful extension that provides a complete solution for growing a collaborative layer of open knowledge.
 
 Credits
 -------
