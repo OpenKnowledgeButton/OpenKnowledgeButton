@@ -9,7 +9,7 @@
 	"content_scripts": [
 		{
 			"matches": [ "*://*/*" ],
-			"js": ["BabelExt.js", "modules/annotateit/jquery-1.10.2.min.js", "modules/annotateit/annotator-full.min.js", "modules/annotateit/annotateit.js", "extension.js"],
+			"js": ["BabelExt.js", "vendor/jquery/jquery.js", "modules/annotateit/annotator-full.min.js", "modules/annotateit/annotateit.js", "extension.js"],
 			"css": ["modules/annotateit/annotator.min.css"]
 		}
 	],
