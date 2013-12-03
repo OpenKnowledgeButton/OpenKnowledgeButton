@@ -13,11 +13,16 @@
 			"css": ["modules/annotateit/annotator.min.css"]
 		}
 	],
-    "options_page": "options/options.html",
+	"options_page": "options/options.html",
 	"icons": {
-        "16": "icon16.png",
-        "48": "icon48.png",
-        "128": "icon128.png"
+		"16": "icon16.png",
+		"48": "icon48.png",
+		"128": "icon128.png"
+	},
+	"browser_action": {
+		"default_title": "Open Knowledge Button",
+		"default_popup": "popup.html",
+		"default_icon": "icon48.png"
 	},
 	"permissions": [
 		"contextMenus",
