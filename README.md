@@ -1,27 +1,26 @@
 Open Knowledge Button
 =====================
 
-The Open Knowledge Button is a browser meta-extension that provide functionalities for multiple open knowledge projects.
+The Open Knowledge Button is a browser meta-extension that provides functionalities for multiple open knowledge projects.
 View and contribute to the web's growing layer of open knowledge via AnnotateIt, Hypothes.is, Knownodes, PeerLibrary, and others.
 
-How about adding your project as well? [Here how!]() TODO - add guidelines how to join.
+How about adding your project as well? [Here's how!]() _TODO: add guidelines about how to join._
 
 Rationale
 ---------
 
-We want to create an open eco-system to grow our communities and make life easier for the people using open knowledge browser extensions: Instead of having multiple, possible conflicting extensions, we provide one customisable extension with a combined set of features.
+We want to create an open ecosystem to grow our communities and make life easier for the people using open knowledge browser extensions. Instead of having multiple, possibly conflicting extensions, we provide one customizable extension with a combined set of features.
 
 Each application has the autonomy to freely and dynamically add or modify the features supported by the Open Knowledge Button. It functions as a public domain gateway for the functionality of each app.
 
-People should have a good experience using the tool. To balance the benefit of the diverse functionalities vs. cost of being overwhelmed by them, end-users can turn on/off functionalities that are not useful for them. As extension developers from different project, we should try our best to see how we can work in harmony, but ultimately it will be up to the end-user to decide what functionalities he or she wants. On installation we provide a concise and user-friendly explanation of the customization functions.
+People should have a good experience using the tool. To balance the benefit of the diverse functionalities vs. cost of being overwhelmed by them, end-users can turn on/off functionalities that are not useful for them. As extension developers from different projects, we should try our best to see how we can work in harmony, but ultimately it will be up to the end-user to decide what functionalities he or she wants. On installation we provide a concise and user-friendly explanation of the customization functions.
 
-We hope this initiative would motivate others to adopt the open knowledge standards and enjoy a powerful extension that provides a complete solution for growing a collaborative layer of open knowledge.
+We hope this initiative motivates others to adopt the open knowledge standards and enjoy a powerful extension that provides a complete solution for growing a collaborative layer of open knowledge.
 
 Credits
 -------
 
-Build using great [BabelExt](https://github.com/honestbleeps/BabelExt) cross browser
-boilerplate/library for extension development, and [fancy-settings](https://github.com/altryne/fancy-settings) for
+Built using the great [BabelExt](https://github.com/honestbleeps/BabelExt) cross browser boilerplate/library for extension development, and [fancy-settings](https://github.com/altryne/fancy-settings) for the 
 settings interface.
 
 Building
@@ -48,7 +47,7 @@ Loading/testing the Extension in Browsers
 
 - Click the wrench icon and choose Tools -> Extensions.
 - Check the "Developer Mode" checkbox.
-- Click "load unpacked extension" and choose the Chrome directory.
+- Click "load unpacked extension" and choose the Chrome directory of this repository.
 - You're good to go!
 - Further Chrome development information can be found at [http://code.google.com/chrome/extensions/index.html](http://code.google.com/chrome/extensions/index.html).
 
